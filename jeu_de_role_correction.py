@@ -58,7 +58,7 @@ def _create_players() -> [Player, Player]:
 def _start_game(player, enemy):
     skip_turn = False
     # Tant que le joueur 1 a des points de vie et que l'ennemi a des points de vie on boucle
-    while player.health >= 0 and enemy.health >= 0:
+    while player.health > 0 and enemy.health > 0:
         if skip_turn:
             print("Vous passez votre tour")
             enemy.attack(player)
