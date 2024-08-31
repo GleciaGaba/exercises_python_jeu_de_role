@@ -2,7 +2,7 @@ from random import random, randint
 
 
 class Player:
-    def __init__(self, name: str, health: int = 50, number_of_flasks: int =3):
+    def __init__(self, name: str, health: int = 50, number_of_flasks: int = 3):
         self.name = name
         self.health = health
         self.number_of_flasks = number_of_flasks
@@ -28,6 +28,7 @@ class Player:
         if not self.number_of_flasks:
             print("Vous ne pouvez pas prendre de potion")
             return False
+        self.number_of_flasks -= 1
         flask_health = randint(5, 50)
         self.health += flask_health
         print(f"{self.name} a récupéré {flask_health} points de vie.")
@@ -51,7 +52,7 @@ def _show_instructions(player: Player, enemy: Player):
 def _create_players() -> [Player, Player]:
     player_01_name = input("Entrez le nom du premier joueur : ")
     player_02_name = input("Entrez le nom de votre adversaire : ")
-    return Player(name=player_01_name), Player(name=player_02_name, number_of_flasks=0)
+    return Player(name=player_01_name, number_of_flasks=3), Player(name=player_02_name, number_of_flasks=0)
 
 
 def _start_game(player, enemy):
