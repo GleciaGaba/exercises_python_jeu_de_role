@@ -37,8 +37,10 @@ while health_player > 0 and health_enemy > 0:
     print(f"L'ennemi vous a infligé {damage_enemy} points de dommages")
     health_player -= damage_enemy
 
-    print(f"Vous avez {health_player} points")
-    print(f"Votre ennemi a {health_enemy}")
+    print(f"Vous avez {health_player} points.")
+    print(f"Votre ennemi a {health_enemy} points.")
+    print("-" * 60)
+
 
 if health_enemy <= 0:
     print("Bravo ! \nVous avez gagné ! \nFin du jeu !")
